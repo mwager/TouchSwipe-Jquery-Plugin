@@ -1634,6 +1634,15 @@
 					return fingerData[i];	
 				}
 			}
+  
+            // --- PATCH ---
+            // prevent returning undefined
+            // see https://github.com/mattbryson/TouchSwipe-Jquery-Plugin/issues/215#issuecomment-73046279
+            return {
+                start:{ x: 0, y: 0 },
+                end:{ x: 0, y: 0 },
+                identifier:0
+            };
 		}
 		
 		/**
